@@ -2,7 +2,6 @@ import numpy as np
 import math
 import random
 import matplotlib.pyplot as plt
-import time
 '''
 true model:
     x^2 = y
@@ -55,8 +54,7 @@ while step < thre_num+accept_num:
     next_move   = resample(old_model) 
     syn_data    = forward(next_move)
     err2        = cal_err(syn_data,fit_data)
-
-    #time.sleep(0.5)
+    
     u = random.uniform(0,1)
     p = cal_prob(err1,err2)
     if u <= p:
